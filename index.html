@@ -204,6 +204,10 @@ LOADING
 
             letter-spacing: 4px;
 
+            text-align: center;
+
+            padding: 0 15px;
+
         }
 
         /*========================
@@ -601,6 +605,11 @@ RESPONSIVE
 ========================*/
 
         @media(max-width:768px) {
+
+            #loader h2 {
+                font-size: clamp(12px, 3.8vw, 18px);
+                letter-spacing: 1.5px;
+            }
 
             .passport-section {
                 height: 100vh;
