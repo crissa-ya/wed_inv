@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jovani & Gellie | Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family: Poppins, sans-serif;
+            background: #eef3fb;
+            overflow-x: hidden;
+            color: white;
+
+        }
+
+        /*========================
+
+BACKGROUND
+
+========================*/
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+
+                linear-gradient(rgba(12, 33, 63, .60), rgba(15, 34, 60, .75)),
+
+                url("images/bg.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            z-index: -5;
+
+        }
+
+        /*========================
+
+SNOW
+
+========================*/
+
+        .snow {
+
+            position: fixed;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: -2;
+
+        }
+
+        .snow span {
+
+            position: absolute;
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            opacity: .8;
+
+            animation: snow linear infinite;
+
+        }
+
+        @keyframes snow {
+
+            0% {
+
+                transform: translateY(-20px);
+
+                opacity: 0;
+
+            }
+
+            20% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform: translateY(110vh);
+
+                opacity: 0;
+
+            }
+
+        }
+
+        /*========================
+
+LOADING
+
+========================*/
+
+        #loader {
+
+            position: fixed;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: #102846;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            z-index: 999999;
+
+            transition: 1s;
+
+        }
+
+        .loader-circle {
+
+            width: 90px;
+
+            height: 90px;
+
+            border-radius: 50%;
+
+            border: 5px solid rgba(255, 255, 255, .15);
+
+            border-top: 5px solid white;
+
+            animation: spin 1s linear infinite;
+
+        }
+
+        @keyframes spin {
+
+            100% {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+        #loader h2 {
+
+            margin-top: 25px;
+
+            font-family: Cinzel;
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+        }
+
+        /*========================
+
+PASSPORT SECTION
+
+========================*/
+
+        .passport-section {
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            padding: 40px;
+
+            text-align: center;
+
+        }
+
+        .passport {
+
+            width: 350px;
+
+            cursor: pointer;
+
+            transition: .6s;
+
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .4));
+
+            animation: float 5s ease-in-out infinite;
+
+        }
+
+        .passport:hover {
+
+            transform: scale(1.05);
+
+        }
+
+        @keyframes float {
+
+            0% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-15px);
+
+            }
+
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        .passport-section h1 {
+
+            font-family: Great Vibes;
+
+            font-size: 80px;
+
+            margin-top: 40px;
+
+            font-weight: normal;
+
+        }
+
+        .passport-section h3 {
+
+            font-family: Cinzel;
+
+            font-weight: 400;
+
+            letter-spacing: 8px;
+
+            margin-top: 10px;
+
+            font-size: 22px;
+
+        }
+
+        .passport-section p {
+
+            margin-top: 25px;
+
+            font-size: 18px;
+
+            opacity: .9;
+
+            line-height: 1.8;
+
+            max-width: 650px;
+
+        }
+
+        .open-btn {
+
+            margin-top: 40px;
+
+            padding: 18px 55px;
+
+            border-radius: 50px;
+
+            border: none;
+
+            font-size: 18px;
+
+            background: white;
+
+            color: #24436c;
+
+            cursor: pointer;
+
+            transition: .4s;
+
+            font-weight: bold;
+
+        }
+
+        .open-btn:hover {
+
+            transform: translateY(-6px);
+
+            background: #d7e4ff;
+
+        }
+
+        /*========================
+
+BOARDING PASS
+
+========================*/
+
+        .boarding {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 120px 20px;
+
+        }
+
+        .boarding img {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+
+        }
+
+        /*========================
+
+INVITATION PAGE
+
+========================*/
+
+        .page {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 120px 30px;
+
+        }
+
+        .page img {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .30);
+
+        }
+
+        /*========================
+
+COUNTDOWN
+
+========================*/
+
+        .countdown {
+
+            padding: 140px 20px;
+
+            text-align: center;
+
+        }
+
+        .countdown h2 {
+
+            font-family: Cinzel;
+
+            font-size: 42px;
+
+            margin-bottom: 60px;
+
+        }
+
+        .timer {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+        }
+
+        .box {
+
+            width: 170px;
+
+            background: rgba(255, 255, 255, .12);
+
+            backdrop-filter: blur(15px);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+        }
+
+        .box h1 {
+
+            font-size: 55px;
+
+        }
+
+        .box p {
+
+            margin-top: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+        .box p {
+
+            margin-top: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+        /*========================
+
+SECTION TITLE
+
+========================*/
+
+        .section-title {
+
+            font-family: Great Vibes;
+
+            font-size: 70px;
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+            font-weight: normal;
+
+            color: white;
+
+        }
+
+        /*========================
+
+BUTTONS
+
+========================*/
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 18px 45px;
+
+            background: white;
+
+            color: #21446f;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .4s;
+
+            margin: 10px;
+
+        }
+
+        .btn:hover {
+
+            transform: translateY(-6px);
+
+            background: #d8e8ff;
+
+        }
+
+        /*========================
+
+GLASS CARD
+
+========================*/
+
+        .glass {
+
+            background: rgba(255, 255, 255, .12);
+
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(255, 255, 255, .2);
+
+            border-radius: 25px;
+
+            padding: 40px;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+
+        }
+
+        /*========================
+
+FOOTER
+
+========================*/
+
+        footer {
+
+            padding: 80px 20px;
+
+            text-align: center;
+
+            font-size: 17px;
+
+            opacity: .9;
+
+        }
+
+        footer h2 {
+
+            font-family: Great Vibes;
+
+            font-size: 60px;
+
+            margin-bottom: 20px;
+
+            font-weight: normal;
+
+        }
+
+        /*========================
+
+RESPONSIVE
+
+========================*/
+
+        @media(max-width:768px) {
+
+            .passport {
+
+                width: 260px;
+
+            }
+
+            .passport-section h1 {
+
+                font-size: 60px;
+
+            }
+
+            .passport-section h3 {
+
+                font-size: 18px;
+
+                letter-spacing: 5px;
+
+            }
+
+            .section-title {
+
+                font-size: 50px;
+
+            }
+
+            .box {
+
+                width: 140px;
+
+                padding: 25px;
+
+            }
+
+            .box h1 {
+
+                font-size: 40px;
+
+            }
+
+            .timer {
+
+                gap: 15px;
+
+            }
+
+            .page {
+
+                padding: 80px 20px;
+
+            }
+
+            .boarding {
+
+                padding: 80px 15px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="loader">
+
+        <div class="loader-circle"></div>
+
+        <h2>Preparing Your Journey...</h2>
+
+    </div>
+
+    <div class="snow"></div>
+
+    <!-- PASSPORT -->
+
+    <section class="passport-section">
+
+        <img src="images/cover.png" class="passport">
+
+        <h1>Jovani & Gellie</h1>
+
+        <h3>A JOURNEY TO FOREVER</h3>
+
+        <p>
+
+            Together with our families,
+
+            joyfully invite you
+
+            to celebrate the beginning
+
+            of our forever.
+
+        </p>
+
+        <button class="open-btn" onclick="openInvitation()">
+
+            Open Invitation
+
+        </button>
+
+    </section>
+
+    <!-- SAVE THE DATE -->
+
+    <section class="boarding" id="invitation">
+
+        <img src="images/save-date.png">
+
+    </section>
+
+    <!-- MAIN INVITATION -->
+
+    <section class="page">
+
+        <img src="images/invite.png">
+
+    </section>
+
+    <!-- PASSPORT PAGE -->
+
+    <section class="page">
+
+        <img src="images/passport.png">
+
+    </section>
+
+    <!-- PRINCIPAL SPONSORS -->
+
+    <section class="page">
+
+        <img src="images/sponsors1.png">
+
+    </section>
+
+    <!-- SECONDARY SPONSORS -->
+
+    <section class="page">
+
+        <img src="images/sponsors2.png">
+
+    </section>
+
+    <!-- RSVP -->
+
+    <section class="page">
+
+        <img src="images/rsvp.png">
+
+    </section>
+
+    <!-- GIFTS -->
+
+    <section class="page">
+
+        <img src="images/gifts.png">
+
+    </section>
+
+    <!-- COUNTDOWN -->
+
+    <section class="countdown">
+
+        <h2 class="section-title">
+
+            Countdown To Our Wedding
+
+        </h2>
+
+        <div class="timer">
+
+            <div class="box">
+
+                <h1 id="days">00</h1>
+
+                <p>DAYS</p>
+
+            </div>
+
+            <div class="box">
+
+                <h1 id="hours">00</h1>
+
+                <p>HOURS</p>
+
+            </div>
+
+            <div class="box">
+
+                <h1 id="minutes">00</h1>
+
+                <p>MINUTES</p>
+
+            </div>
+
+            <div class="box">
+
+                <h1 id="seconds">00</h1>
+
+                <p>SECONDS</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MUSIC BUTTON -->
+
+    <button id="musicBtn" onclick="toggleMusic()">
+
+        🎵
+
+    </button>
+
+    <audio id="bgMusic" loop>
+
+        <source src="music/forever.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- AIRPLANE -->
+
+    <div id="plane">
+
+        ✈
+
+    </div>
+
+    <footer>
+
+        <h2>
+
+            Thank You
+
+        </h2>
+
+        <p>
+
+            Thank you for being part of our story.
+
+            We can't wait to celebrate with you.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            July 18, 2026
+
+        </p>
+
+    </footer>
+
+    <style>
+        /*========================
+
+MUSIC BUTTON
+
+========================*/
+
+        #musicBtn {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 65px;
+
+            height: 65px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: white;
+
+            font-size: 26px;
+
+            cursor: pointer;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+
+            z-index: 999;
+
+            transition: .4s;
+
+        }
+
+        #musicBtn:hover {
+
+            transform: scale(1.15);
+
+        }
+
+        /*========================
+
+AIRPLANE
+
+========================*/
+
+        #plane {
+
+            position: fixed;
+
+            top: 120px;
+
+            left: -100px;
+
+            font-size: 38px;
+
+            z-index: 10;
+
+            animation: fly 25s linear infinite;
+
+            pointer-events: none;
+
+        }
+
+        @keyframes fly {
+
+            0% {
+
+                left: -100px;
+
+                transform: translateY(0) rotate(5deg);
+
+            }
+
+            25% {
+
+                transform: translateY(-20px) rotate(-5deg);
+
+            }
+
+            50% {
+
+                transform: translateY(10px) rotate(4deg);
+
+            }
+
+            75% {
+
+                transform: translateY(-15px) rotate(-4deg);
+
+            }
+
+            100% {
+
+                left: 110%;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        footer {
+
+            background: rgba(0, 0, 0, .15);
+
+            backdrop-filter: blur(12px);
+
+        }
+    </style>
+
+    <script>
+
+        /*========================
+        
+        LOADER
+        
+        ========================*/
+
+        window.onload = function () {
+
+            setTimeout(function () {
+
+                loader.style.opacity = "0";
+
+                setTimeout(function () {
+
+                    loader.style.display = "none";
+
+                }, 1000);
+
+            }, 1800);
+
+        }
+
+        /*========================
+        
+        OPEN BUTTON
+        
+        ========================*/
+
+        function openInvitation() {
+
+            document.getElementById("invitation").scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+            document.getElementById("bgMusic").play();
+
+        }
+
+        /*========================
+        
+        SNOW
+        
+        ========================*/
+
+        const snow = document.querySelector(".snow");
+
+        for (let i = 0; i < 180; i++) {
+
+            let s = document.createElement("span");
+
+            s.style.left = Math.random() * 100 + "%";
+
+            s.style.animationDuration = 5 + Math.random() * 12 + "s";
+
+            s.style.animationDelay = Math.random() * 8 + "s";
+
+            s.style.opacity = Math.random();
+
+            s.style.transform = "scale(" + (Math.random() + 0.3) + ")";
+
+            snow.appendChild(s);
+
+        }
+
+        /*========================
+        
+        COUNTDOWN
+        
+        ========================*/
+
+        const target = new Date("July 18, 2026 14:00:00").getTime();
+
+        setInterval(function () {
+
+            const now = new Date().getTime();
+
+            const diff = target - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+
+            document.getElementById("hours").innerHTML = hours;
+
+            document.getElementById("minutes").innerHTML = minutes;
+
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000);
+
+        /*========================
+        
+        MUSIC
+        
+        ========================*/
+
+        const music = document.getElementById("bgMusic");
+
+        const btn = document.getElementById("musicBtn");
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                btn.innerHTML = "🔊";
+
+            }
+
+            else {
+
+                music.pause();
+
+                btn.innerHTML = "🎵";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
