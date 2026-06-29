@@ -703,6 +703,8 @@ RESPONSIVE
 
     </section>
 
+    <div id="invitationContent" style="display:none;"></div>
+
     <!-- SAVE THE DATE -->
 
     <section class="boarding" id="invitation">
@@ -854,6 +856,7 @@ RESPONSIVE
         </p>
 
     </footer>
+    </div>
 
     <style>
         /*========================
@@ -962,6 +965,8 @@ AIRPLANE
 
         footer {
 
+
+
             background: rgba(0, 0, 0, .15);
 
             backdrop-filter: blur(12px);
@@ -1001,13 +1006,22 @@ AIRPLANE
 
         function openInvitation() {
 
-            document.getElementById("invitation").scrollIntoView({
+            // Show all hidden sections
+            document.getElementById("invitationContent").style.display = "block";
 
-                behavior: "smooth"
-
-            });
-
+            // Start the music
             document.getElementById("bgMusic").play();
+
+            // Smooth scroll to the first invitation page
+            setTimeout(function () {
+
+                document.getElementById("invitation").scrollIntoView({
+
+                    behavior: "smooth"
+
+                });
+
+            }, 300);
 
         }
 
