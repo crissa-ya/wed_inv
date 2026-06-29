@@ -703,159 +703,160 @@ RESPONSIVE
 
     </section>
 
-    <div id="invitationContent" style="display:none;"></div>
 
-    <!-- SAVE THE DATE -->
+    <div id="allPages" style="display:none;">
 
-    <section class="boarding" id="invitation">
+        <!-- SAVE THE DATE -->
 
-        <img src="images/save-date.png">
+        <section class="boarding" id="invitation">
 
-    </section>
+            <img src="images/save-date.png">
 
-    <!-- MAIN INVITATION -->
+        </section>
 
-    <section class="page">
+        <!-- MAIN INVITATION -->
 
-        <img src="images/invite.png">
+        <section class="page">
 
-    </section>
+            <img src="images/invite.png">
 
-    <!-- PASSPORT PAGE -->
+        </section>
 
-    <section class="page">
+        <!-- PASSPORT PAGE -->
 
-        <img src="images/passport.png">
+        <section class="page">
 
-    </section>
+            <img src="images/passport.png">
 
-    <!-- PRINCIPAL SPONSORS -->
+        </section>
 
-    <section class="page">
+        <!-- PRINCIPAL SPONSORS -->
 
-        <img src="images/sponsors1.png">
+        <section class="page">
 
-    </section>
+            <img src="images/sponsors1.png">
 
-    <!-- SECONDARY SPONSORS -->
+        </section>
 
-    <section class="page">
+        <!-- SECONDARY SPONSORS -->
 
-        <img src="images/sponsors2.png">
+        <section class="page">
 
-    </section>
+            <img src="images/sponsors2.png">
 
-    <!-- RSVP -->
+        </section>
 
-    <section class="page">
+        <!-- RSVP -->
 
-        <img src="images/rsvp.png">
+        <section class="page">
 
-    </section>
+            <img src="images/rsvp.png">
 
-    <!-- GIFTS -->
+        </section>
 
-    <section class="page">
+        <!-- GIFTS -->
 
-        <img src="images/gifts.png">
+        <section class="page">
 
-    </section>
+            <img src="images/gifts.png">
 
-    <!-- COUNTDOWN -->
+        </section>
 
-    <section class="countdown">
+        <!-- COUNTDOWN -->
 
-        <h2 class="section-title">
+        <section class="countdown">
 
-            Countdown To Our Wedding
+            <h2 class="section-title">
 
-        </h2>
+                Countdown To Our Wedding
 
-        <div class="timer">
+            </h2>
 
-            <div class="box">
+            <div class="timer">
 
-                <h1 id="days">00</h1>
+                <div class="box">
 
-                <p>DAYS</p>
+                    <h1 id="days">00</h1>
+
+                    <p>DAYS</p>
+
+                </div>
+
+                <div class="box">
+
+                    <h1 id="hours">00</h1>
+
+                    <p>HOURS</p>
+
+                </div>
+
+                <div class="box">
+
+                    <h1 id="minutes">00</h1>
+
+                    <p>MINUTES</p>
+
+                </div>
+
+                <div class="box">
+
+                    <h1 id="seconds">00</h1>
+
+                    <p>SECONDS</p>
+
+                </div>
 
             </div>
 
-            <div class="box">
+        </section>
 
-                <h1 id="hours">00</h1>
+        <!-- MUSIC BUTTON -->
 
-                <p>HOURS</p>
+        <button id="musicBtn" onclick="toggleMusic()">
 
-            </div>
+            🎵
 
-            <div class="box">
+        </button>
 
-                <h1 id="minutes">00</h1>
+        <audio id="bgMusic" loop>
 
-                <p>MINUTES</p>
+            <source src="music/forever.mp3" type="audio/mpeg">
 
-            </div>
+        </audio>
 
-            <div class="box">
+        <!-- AIRPLANE -->
 
-                <h1 id="seconds">00</h1>
+        <div id="plane">
 
-                <p>SECONDS</p>
-
-            </div>
+            ✈
 
         </div>
 
-    </section>
+        <footer>
 
-    <!-- MUSIC BUTTON -->
+            <h2>
 
-    <button id="musicBtn" onclick="toggleMusic()">
+                Thank You
 
-        🎵
+            </h2>
 
-    </button>
+            <p>
 
-    <audio id="bgMusic" loop>
+                Thank you for being part of our story.
 
-        <source src="music/forever.mp3" type="audio/mpeg">
+                We can't wait to celebrate with you.
 
-    </audio>
+            </p>
 
-    <!-- AIRPLANE -->
+            <br>
 
-    <div id="plane">
+            <p>
 
-        ✈
+                July 18, 2026
 
-    </div>
+            </p>
 
-    <footer>
-
-        <h2>
-
-            Thank You
-
-        </h2>
-
-        <p>
-
-            Thank you for being part of our story.
-
-            We can't wait to celebrate with you.
-
-        </p>
-
-        <br>
-
-        <p>
-
-            July 18, 2026
-
-        </p>
-
-    </footer>
+        </footer>
     </div>
 
     <style>
@@ -1006,22 +1007,22 @@ AIRPLANE
 
         function openInvitation() {
 
-            // Show all hidden sections
-            document.getElementById("invitationContent").style.display = "block";
+            // Enable scrolling
+            document.body.style.overflowY = "auto";
 
-            // Start the music
+            // Show the rest of the invitation
+            document.getElementById("allPages").style.display = "block";
+
+            // Hide the passport landing page
+            document.querySelector(".passport-section").style.display = "none";
+
+            // Play music
             document.getElementById("bgMusic").play();
 
-            // Smooth scroll to the first invitation page
-            setTimeout(function () {
-
-                document.getElementById("invitation").scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
-            }, 300);
+            // Go to the first invitation page
+            document.getElementById("invitation").scrollIntoView({
+                behavior: "smooth"
+            });
 
         }
 
