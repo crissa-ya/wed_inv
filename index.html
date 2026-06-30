@@ -1375,6 +1375,117 @@ RESPONSIVE
             </div>
         </div>
 
+        <!-- Slide 10: PRENUP GALLERY -->
+        <div class="slide">
+            <div class="slide-content">
+                <section class="prenup-section">
+                    <div class="prenup-header">
+                        <h2 class="prenup-title">A Glimpse of Forever</h2>
+                        <p class="prenup-subtitle">Prenuptial Photos &nbsp;&bull;&nbsp; Jovani &amp; Gellie</p>
+                        <div class="prenup-divider"></div>
+                    </div>
+                    <div class="prenup-grid">
+                        <div class="prenup-item" onclick="openLightbox(0)">
+                            <img src="images/prenup/DSC_5993.jpg" alt="Prenup Photo 1" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(1)">
+                            <img src="images/prenup/DSC_6000.jpg" alt="Prenup Photo 2" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(2)">
+                            <img src="images/prenup/DSC_6039.jpg" alt="Prenup Photo 3" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(3)">
+                            <img src="images/prenup/DSC_6051.jpg" alt="Prenup Photo 4" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(4)">
+                            <img src="images/prenup/DSC_6068.jpg" alt="Prenup Photo 5" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(5)">
+                            <img src="images/prenup/DSC_6117.jpg" alt="Prenup Photo 6" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(6)">
+                            <img src="images/prenup/DSC_6138.jpg" alt="Prenup Photo 7" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                        <div class="prenup-item" onclick="openLightbox(7)">
+                            <img src="images/prenup/DSC_6208.jpg" alt="Prenup Photo 8" loading="lazy">
+                            <div class="prenup-overlay"><span>&#10064;</span></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Slide 11: WEDDING TIMELINE -->
+        <div class="slide">
+            <div class="slide-content">
+                <section class="timeline-section">
+                    <div class="timeline-header">
+                        <h2 class="timeline-title">The Wedding Timeline</h2>
+                        <p class="timeline-subtitle">July 18, 2026</p>
+                        <div class="timeline-divider"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🚌</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">12:00 PM</div>
+                                <div class="timeline-desc">Departure of the Groom &amp; Entourage</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">⛪</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">2:00 PM</div>
+                                <div class="timeline-desc">Ceremony Starts</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">📸</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">3:20 PM</div>
+                                <div class="timeline-desc">Post-Nup Pictorials &amp; Photo Ops</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🥂</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">4:00 PM</div>
+                                <div class="timeline-desc">Reception Arrival &amp; Cocktail Time</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🎤</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">4:30 PM</div>
+                                <div class="timeline-desc">Program Starts</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🍽️</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">6:00 PM</div>
+                                <div class="timeline-desc">Dinner Served</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🎇</div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">7:00 PM - 8:00 PM</div>
+                                <div class="timeline-desc">Programme Ends</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
         <!-- Navigation Buttons -->
         <button class="slider-btn prev-btn" onclick="prevSlide(event)">&#10094;</button>
         <button class="slider-btn next-btn" onclick="nextSlide(event)">&#10095;</button>
@@ -1390,6 +1501,8 @@ RESPONSIVE
             <span class="dot" onclick="currentSlide(6)"></span>
             <span class="dot" onclick="currentSlide(7)"></span>
             <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
         </div>
 
         <!-- MUSIC BUTTON -->
@@ -1404,6 +1517,17 @@ RESPONSIVE
         <!-- AIRPLANE -->
         <div id="plane">
             ✈
+        </div>
+    </div>
+
+    <!-- PRENUP LIGHTBOX MODAL -->
+    <div id="prenupLightbox" class="lightbox-modal">
+        <div class="lightbox-content-wrapper">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-btn lightbox-prev" onclick="changeLightboxSlide(-1)">&#10094;</button>
+            <img id="lightboxImage" class="lightbox-img" src="" alt="Prenup Enlarged">
+            <button class="lightbox-btn lightbox-next" onclick="changeLightboxSlide(1)">&#10095;</button>
+            <div id="lightboxCaption" class="lightbox-caption"></div>
         </div>
     </div>
 
@@ -1520,6 +1644,351 @@ AIRPLANE
 
             backdrop-filter: blur(12px);
 
+        }
+
+        /*========================
+        PRENUP GALLERY
+        ========================*/
+        .prenup-section {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .prenup-header {
+            margin-bottom: 25px;
+        }
+        .prenup-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 55px;
+            color: #f5d98b;
+            text-shadow: 0 0 10px rgba(245, 217, 139, 0.3);
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        .prenup-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+        }
+        .prenup-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f5d98b, transparent);
+            margin: 15px auto 0 auto;
+        }
+        .prenup-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .prenup-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(245, 217, 139, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .prenup-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .prenup-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(245, 217, 139, 0.8);
+            box-shadow: 0 15px 30px rgba(245, 217, 139, 0.2);
+        }
+        .prenup-item:hover img {
+            transform: scale(1.1);
+        }
+        .prenup-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 33, 63, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .prenup-item:hover .prenup-overlay {
+            opacity: 1;
+        }
+        .prenup-overlay span {
+            color: #f5d98b;
+            font-size: 28px;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .prenup-item:hover .prenup-overlay span {
+            transform: scale(1);
+        }
+
+        /*========================
+        LIGHTBOX VIEWER
+        ========================*/
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 600000;
+            background: rgba(5, 18, 40, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .lightbox-modal.show {
+            opacity: 1;
+        }
+        .lightbox-content-wrapper {
+            position: relative;
+            max-width: 90%;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid rgba(245, 217, 139, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            opacity: 1;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.2s ease;
+        }
+        .lightbox-modal.show .lightbox-img {
+            transform: scale(1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .lightbox-close:hover {
+            color: #f5d98b;
+        }
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 18px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 0.3s;
+            user-select: none;
+            z-index: 10;
+        }
+        .lightbox-btn:hover {
+            background: rgba(245, 217, 139, 0.3);
+            border-color: #f5d98b;
+            color: #f5d98b;
+        }
+        .lightbox-prev {
+            left: -80px;
+        }
+        .lightbox-next {
+            right: -80px;
+        }
+        .lightbox-caption {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 900px) {
+            .lightbox-prev {
+                left: 10px;
+            }
+            .lightbox-next {
+                right: 10px;
+            }
+            .lightbox-close {
+                top: -45px;
+                right: 10px;
+            }
+            .lightbox-content-wrapper {
+                width: 95%;
+            }
+        }
+        @media (max-width: 768px) {
+            .prenup-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .prenup-title {
+                font-size: 42px;
+            }
+            .prenup-subtitle {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+        }
+        /*========================
+        WEDDING TIMELINE
+        ========================*/
+        .timeline-section {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px 5px;
+        }
+        .timeline-header {
+            margin-bottom: 25px;
+        }
+        .timeline-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: #f5d98b;
+            text-shadow: 0 0 10px rgba(245, 217, 139, 0.3);
+            font-weight: normal;
+            margin-bottom: 3px;
+        }
+        .timeline-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+        }
+        .timeline-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f5d98b, transparent);
+            margin: 12px auto 0 auto;
+        }
+        .timeline-container {
+            position: relative;
+            margin: 15px auto 0 auto;
+            padding: 5px 0;
+            text-align: left;
+        }
+        /* Vertical line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25px;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(245, 217, 139, 0.1), #f5d98b 20%, #f5d98b 80%, rgba(245, 217, 139, 0.1));
+            box-shadow: 0 0 8px rgba(245, 217, 139, 0.3);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 18px;
+            padding-left: 55px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.5s ease;
+        }
+        /* Reveal animation when active slide */
+        .slide.active .timeline-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(1) { transition-delay: 0.05s; }
+        .timeline-item:nth-child(2) { transition-delay: 0.12s; }
+        .timeline-item:nth-child(3) { transition-delay: 0.19s; }
+        .timeline-item:nth-child(4) { transition-delay: 0.26s; }
+        .timeline-item:nth-child(5) { transition-delay: 0.33s; }
+        .timeline-item:nth-child(6) { transition-delay: 0.40s; }
+        .timeline-item:nth-child(7) { transition-delay: 0.47s; }
+
+        .timeline-icon {
+            position: absolute;
+            left: 11px;
+            top: 3px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #0f223c;
+            border: 2px solid #f5d98b;
+            color: #f5d98b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            z-index: 2;
+            box-shadow: 0 0 8px rgba(245, 217, 139, 0.4);
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-icon {
+            background: #f5d98b;
+            color: #0f223c;
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(245, 217, 139, 0.8);
+        }
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .timeline-content:hover {
+            background: rgba(255, 255, 255, 0.11);
+            border-color: rgba(245, 217, 139, 0.3);
+            transform: translateX(4px);
+        }
+        .timeline-time {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            color: #f5d98b;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .timeline-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        @media (max-width: 768px) {
+            .timeline-title {
+                font-size: 40px;
+            }
+            .timeline-subtitle {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+            .timeline-content {
+                padding: 8px 12px;
+            }
+            .timeline-desc {
+                font-size: 13px;
+            }
+            .timeline-item {
+                margin-bottom: 14px;
+            }
         }
     </style>
 
@@ -1800,6 +2269,102 @@ AIRPLANE
             }
 
         }
+
+        /*========================
+        
+        PRENUP LIGHTBOX JAVASCRIPT
+        
+        ========================*/
+        let currentLightboxIndex = 0;
+        const prenupImages = [
+            "images/prenup/DSC_5993.jpg",
+            "images/prenup/DSC_6000.jpg",
+            "images/prenup/DSC_6039.jpg",
+            "images/prenup/DSC_6051.jpg",
+            "images/prenup/DSC_6068.jpg",
+            "images/prenup/DSC_6117.jpg",
+            "images/prenup/DSC_6138.jpg",
+            "images/prenup/DSC_6208.jpg"
+        ];
+
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            const lightbox = document.getElementById("prenupLightbox");
+            const lightboxImg = document.getElementById("lightboxImage");
+            const lightboxCaption = document.getElementById("lightboxCaption");
+            
+            lightboxImg.src = prenupImages[currentLightboxIndex];
+            lightboxCaption.textContent = `Photo ${currentLightboxIndex + 1} of ${prenupImages.length}`;
+            
+            lightbox.style.display = "flex";
+            // Trigger transition
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    lightbox.classList.add("show");
+                });
+            });
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById("prenupLightbox");
+            lightbox.classList.remove("show");
+            setTimeout(() => {
+                lightbox.style.display = "none";
+            }, 400);
+        }
+
+        function changeLightboxSlide(direction) {
+            currentLightboxIndex += direction;
+            if (currentLightboxIndex >= prenupImages.length) {
+                currentLightboxIndex = 0;
+            } else if (currentLightboxIndex < 0) {
+                currentLightboxIndex = prenupImages.length - 1;
+            }
+            const lightboxImg = document.getElementById("lightboxImage");
+            const lightboxCaption = document.getElementById("lightboxCaption");
+            
+            // Fade out
+            lightboxImg.style.opacity = "0";
+            lightboxImg.style.transform = "scale(0.95)";
+            
+            setTimeout(() => {
+                lightboxImg.src = prenupImages[currentLightboxIndex];
+                lightboxCaption.textContent = `Photo ${currentLightboxIndex + 1} of ${prenupImages.length}`;
+                // Fade back in
+                lightboxImg.style.opacity = "1";
+                lightboxImg.style.transform = "scale(1)";
+            }, 200);
+        }
+
+        // Add keyboard listener
+        document.addEventListener("keydown", (e) => {
+            const lightbox = document.getElementById("prenupLightbox");
+            if (lightbox && lightbox.classList.contains("show")) {
+                if (e.key === "Escape") {
+                    closeLightbox();
+                } else if (e.key === "ArrowRight") {
+                    changeLightboxSlide(1);
+                } else if (e.key === "ArrowLeft") {
+                    changeLightboxSlide(-1);
+                }
+            }
+        });
+
+        // Block swipe propagation so it doesn't change slides in the background
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox = document.getElementById("prenupLightbox");
+            if (lightbox) {
+                lightbox.addEventListener("touchstart", (e) => {
+                    e.stopPropagation();
+                }, {passive: true});
+                lightbox.addEventListener("touchmove", (e) => {
+                    e.stopPropagation();
+                }, {passive: true});
+                lightbox.addEventListener("touchend", (e) => {
+                    e.stopPropagation();
+                }, {passive: true});
+            }
+        });
 
     </script>
 
