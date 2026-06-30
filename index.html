@@ -740,12 +740,29 @@ WELCOME MODAL
             justify-content: center;
             align-items: center;
             padding: 20px;
-            background: rgba(5, 18, 40, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: rgba(5, 18, 40, 0.78);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.7s ease, visibility 0.7s ease;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+            overflow: hidden;
+        }
+
+        /* Floating sparkle particles inside modal */
+        #welcomeModal .modal-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: modal-float linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes modal-float {
+            0%   { transform: translateY(110%) scale(0.5); opacity: 0; }
+            15%  { opacity: 1; }
+            85%  { opacity: 0.6; }
+            100% { transform: translateY(-20px) scale(1.1); opacity: 0; }
         }
 
         #welcomeModal.show {
@@ -753,120 +770,223 @@ WELCOME MODAL
             visibility: visible;
         }
 
+        /* Animated glowing border via wrapper */
+        .welcome-card-wrapper {
+            position: relative;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 32px;
+            padding: 2px;
+            background: linear-gradient(135deg,
+                rgba(245,217,139,0.6),
+                rgba(255,255,255,0.12) 40%,
+                rgba(245,217,139,0.5) 70%,
+                rgba(255,255,255,0.1));
+            background-size: 300% 300%;
+            animation: border-shimmer 5s ease infinite;
+            box-shadow:
+                0 0 40px rgba(245, 217, 139, 0.18),
+                0 35px 90px rgba(0,0,0,0.55);
+            transform: translateY(50px) scale(0.95);
+            opacity: 0;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+        }
+
+        @keyframes border-shimmer {
+            0%   { background-position: 0% 50%; box-shadow: 0 0 30px rgba(245,217,139,0.15), 0 35px 90px rgba(0,0,0,0.55); }
+            50%  { background-position: 100% 50%; box-shadow: 0 0 55px rgba(245,217,139,0.35), 0 35px 90px rgba(0,0,0,0.55); }
+            100% { background-position: 0% 50%; box-shadow: 0 0 30px rgba(245,217,139,0.15), 0 35px 90px rgba(0,0,0,0.55); }
+        }
+
+        #welcomeModal.show .welcome-card-wrapper {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
         .welcome-card {
-            background: rgba(255, 255, 255, 0.09);
-            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: linear-gradient(160deg, rgba(14,30,60,0.92) 0%, rgba(8,20,45,0.97) 100%);
             border-radius: 30px;
-            padding: 55px 50px 45px;
-            max-width: 680px;
+            padding: 52px 50px 42px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.15);
-            transform: translateY(40px) scale(0.96);
-            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
-            opacity: 0;
             overflow-y: auto;
             max-height: 90vh;
             max-height: 90dvh;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            position: relative;
         }
 
-        #welcomeModal.show .welcome-card {
-            transform: translateY(0) scale(1);
-            opacity: 1;
+        .welcome-card::-webkit-scrollbar { display: none; }
+
+        /* Animated interlocking rings */
+        .welcome-rings {
+            font-size: 32px;
+            margin-bottom: 4px;
+            display: inline-block;
+            animation: ring-beat 2.2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(245,217,139,0.6));
         }
 
-        .welcome-card::-webkit-scrollbar {
-            display: none;
+        @keyframes ring-beat {
+            0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 8px rgba(245,217,139,0.5)); }
+            50%       { transform: scale(1.12); filter: drop-shadow(0 0 20px rgba(245,217,139,0.9)); }
         }
 
-        .welcome-cross {
-            font-size: 28px;
-            color: rgba(255,255,255,0.55);
-            margin-bottom: 8px;
-            letter-spacing: 6px;
-            font-family: Cinzel;
-            animation: glow-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,0.3); }
-            50% { text-shadow: 0 0 22px rgba(255,255,255,0.75); }
-        }
-
+        /* Gold shimmer title */
         .welcome-title {
             font-family: Great Vibes;
-            font-size: clamp(46px, 8vw, 68px);
+            font-size: clamp(48px, 8.5vw, 72px);
             font-weight: normal;
-            color: white;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             line-height: 1.1;
-            text-shadow: 0 2px 18px rgba(255,255,255,0.2);
+            background: linear-gradient(90deg,
+                #f5d98b 0%,
+                #fff8e7 30%,
+                #f5d98b 50%,
+                #ffe066 70%,
+                #f5d98b 100%);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gold-shimmer 4s linear infinite;
         }
 
+        @keyframes gold-shimmer {
+            0%   { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
+        /* Scripture verse */
+        .welcome-scripture {
+            font-family: Poppins, sans-serif;
+            font-size: clamp(11px, 1.8vw, 13px);
+            font-style: italic;
+            color: rgba(245, 217, 139, 0.7);
+            letter-spacing: 0.5px;
+            margin: 10px auto 0;
+            max-width: 420px;
+            line-height: 1.7;
+        }
+
+        /* Divider */
         .welcome-divider {
-            width: 60px;
-            height: 1.5px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
-            margin: 18px auto;
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245,217,139,0.6), transparent);
+            margin: 20px auto;
         }
 
         .welcome-body {
             font-family: Poppins, sans-serif;
-            font-size: clamp(13px, 2.2vw, 15.5px);
-            line-height: 1.95;
-            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(13px, 2.1vw, 15px);
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.85);
             max-width: 560px;
             margin: 0 auto;
+            text-align: left;
         }
 
-        .welcome-body p {
-            margin-bottom: 18px;
+        /* Chapter paragraphs */
+        .welcome-chapter {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .welcome-body p:last-child {
-            margin-bottom: 0;
+        .welcome-chapter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-icon {
+            font-size: 18px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 6px rgba(245,217,139,0.5));
+        }
+
+        .chapter-text {
+            flex: 1;
         }
 
         .welcome-body .highlight {
-            color: #c8daff;
+            color: #f5d98b;
             font-style: italic;
+            font-weight: 500;
         }
 
+        /* Closing line centered */
+        .welcome-closing {
+            text-align: center;
+            margin-top: 8px;
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .welcome-closing.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .welcome-closing .highlight {
+            color: #f5d98b;
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(14px, 2.5vw, 16.5px);
+        }
+
+        /* Continue button */
         .welcome-continue-btn {
             margin-top: 38px;
-            padding: 16px 52px;
+            padding: 16px 56px;
             border-radius: 50px;
-            border: 1.5px solid rgba(255,255,255,0.5);
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
+            border: 1.5px solid rgba(245,217,139,0.55);
+            background: rgba(245, 217, 139, 0.1);
+            color: #f5d98b;
             font-family: Cinzel;
             font-size: 13px;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             cursor: pointer;
             transition: 0.4s;
             backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(14px);
+            transition: background 0.4s, transform 0.4s, box-shadow 0.4s, opacity 0.6s ease;
+        }
+
+        .welcome-continue-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .welcome-continue-btn:hover {
-            background: rgba(255,255,255,0.28);
+            background: rgba(245,217,139,0.22);
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(255,255,255,0.1);
+            box-shadow: 0 12px 35px rgba(245,217,139,0.2);
+            border-color: rgba(245,217,139,0.9);
         }
 
         @media(max-width: 600px) {
             .welcome-card {
-                padding: 38px 24px 34px;
+                padding: 36px 22px 32px;
                 border-radius: 22px;
             }
             .welcome-body {
                 font-size: 13px;
             }
             .welcome-continue-btn {
-                padding: 14px 38px;
+                padding: 14px 40px;
                 font-size: 12px;
             }
+            .welcome-chapter { gap: 10px; }
+            .chapter-icon { font-size: 16px; }
         }
 
         /*========================
@@ -1107,19 +1227,39 @@ RESPONSIVE
 
     <!-- WELCOME MODAL -->
     <div id="welcomeModal">
-        <div class="welcome-card">
-            <div class="welcome-cross">✦ ✦ ✦</div>
-            <div class="welcome-title">Our Love Story</div>
-            <div class="welcome-divider"></div>
-            <div class="welcome-body">
-                <p>Every beautiful story begins with <span class="highlight">God's perfect timing</span>, and ours is no exception.</p>
-                <p>What began as two separate journeys became one path filled with faith, patience, and love. Through every season, God prepared our hearts and taught us to trust His perfect plan.</p>
-                <p>For <span class="highlight">seven wonderful years</span>, our love was tested by distance. Though miles often separated us, our hearts never did. Every goodbye became a promise to meet again, every challenge strengthened our faith, and every season drew us closer together. We became each other's comfort, choosing faithfulness, understanding, and love every single day. Those seven years proved that <span class="highlight">no distance is greater than a love anchored in God.</span></p>
-                <p>In His perfect time, our prayers were answered, and our dreams became reality.</p>
-                <p>Today, with grateful hearts, we begin the greatest chapter of our story, trusting the One who has faithfully guided us every step of the way.</p>
-                <p><span class="highlight">This is only the beginning of our forever.</span></p>
+        <div class="welcome-card-wrapper">
+            <div class="welcome-card">
+                <div class="welcome-rings">💍&thinsp;💍</div>
+                <div class="welcome-title">Our Love Story</div>
+                <div class="welcome-scripture">
+                    &ldquo;Two are better than one &hellip; for if either of them falls,<br>
+                    the one will lift up his companion.&rdquo;<br>
+                    <span style="font-size:11px; letter-spacing:2px; font-style:normal;">— Ecclesiastes 4:9–10</span>
+                </div>
+                <div class="welcome-divider"></div>
+                <div class="welcome-body">
+                    <div class="welcome-chapter">
+                        <span class="chapter-icon">✝</span>
+                        <span class="chapter-text">Every beautiful story begins with <span class="highlight">God's perfect timing</span>, and ours is no exception. What began as two separate journeys became one path filled with faith, patience, and love. Through every season, God prepared our hearts and taught us to trust His perfect plan.</span>
+                    </div>
+                    <div class="welcome-chapter">
+                        <span class="chapter-icon">✈</span>
+                        <span class="chapter-text">For <span class="highlight">seven wonderful years</span>, our love was tested by distance. Though miles often separated us, our hearts never did. Every goodbye became a promise to meet again, every challenge strengthened our faith, and every season drew us closer together.</span>
+                    </div>
+                    <div class="welcome-chapter">
+                        <span class="chapter-icon">💌</span>
+                        <span class="chapter-text">We became each other's comfort, choosing faithfulness, understanding, and love every single day. Those seven years proved that <span class="highlight">no distance is greater than a love anchored in God.</span></span>
+                    </div>
+                    <div class="welcome-chapter">
+                        <span class="chapter-icon">🕊</span>
+                        <span class="chapter-text">In His perfect time, our prayers were answered, and our dreams became reality. Today, with grateful hearts, we begin the greatest chapter of our story, trusting the One who has faithfully guided us every step of the way.</span>
+                    </div>
+                    <div class="welcome-closing">
+                        <span class="highlight">This is only the beginning of our forever.</span>
+                    </div>
+                </div>
+                <button class="welcome-continue-btn" id="welcomeEnterBtn" onclick="proceedToInvitation()">ENTER &nbsp;&#10095;</button>
             </div>
-            <button class="welcome-continue-btn" onclick="proceedToInvitation()">ENTER &nbsp;&#10095;</button>
         </div>
     </div>
 
@@ -1474,13 +1614,51 @@ AIRPLANE
             const modal = document.getElementById("welcomeModal");
             modal.style.display = "flex";
 
-            // Trigger animation on next frame
+            // Spawn floating sparkle particles inside modal
+            spawnModalParticles(modal);
+
+            // Trigger modal entrance animation on next frame
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     modal.classList.add("show");
+
+                    // Staggered paragraph reveal
+                    const chapters = modal.querySelectorAll(".welcome-chapter, .welcome-closing");
+                    const btn = document.getElementById("welcomeEnterBtn");
+                    chapters.forEach((el, i) => {
+                        setTimeout(() => {
+                            el.classList.add("visible");
+                        }, 700 + i * 220);
+                    });
+                    // Reveal button after all chapters
+                    setTimeout(() => {
+                        if (btn) btn.classList.add("visible");
+                    }, 700 + chapters.length * 220 + 200);
                 });
             });
 
+        }
+
+        function spawnModalParticles(modal) {
+            const colors = [
+                "rgba(245,217,139,0.7)",
+                "rgba(255,255,255,0.5)",
+                "rgba(245,217,139,0.4)",
+                "rgba(200,218,255,0.4)"
+            ];
+            for (let i = 0; i < 28; i++) {
+                const p = document.createElement("div");
+                p.className = "modal-particle";
+                const size = 3 + Math.random() * 5;
+                p.style.width  = size + "px";
+                p.style.height = size + "px";
+                p.style.left   = Math.random() * 100 + "%";
+                p.style.bottom = "-20px";
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration  = (6 + Math.random() * 10) + "s";
+                p.style.animationDelay     = (Math.random() * 8) + "s";
+                modal.appendChild(p);
+            }
         }
 
         function proceedToInvitation() {
